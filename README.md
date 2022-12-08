@@ -79,3 +79,9 @@ in your Dockerfile.
 ## Remove Dangling aka <none> Images
 
 `docker rmi $(docker images -f "dangling=true" -q)`
+
+
+## Remark
+
+__Never name your python file with the same name of pakcages!__ For instance,
+`torch.py` is very bad naming when you want to use `pytorch`. 
