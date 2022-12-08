@@ -10,7 +10,8 @@ print(sys.executable)
 # set memory allocation 
 # https://jax.readthedocs.io/en/latest/gpu_memory_allocation.html
 import os
-os.environ['XLA_PYTHON_CLIENT_MEM_FRACTION']='.30'
+# do not need this with container 
+# os.environ['XLA_PYTHON_CLIENT_MEM_FRACTION']='.30'
 
 
 key = random.PRNGKey(0)
