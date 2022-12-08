@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "ms-python.python",
-        "formulahendry.code-runner"
+        "formulahendry.code-runner",
+        "ms-toolsai.jupyter"
     ]
 }
