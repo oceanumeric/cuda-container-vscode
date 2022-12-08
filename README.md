@@ -32,6 +32,16 @@ Wed Dec  7 23:03:30 2022
 +-----------------------------------------------------------------------------+
 ```   
 
+`nvcc --version`
+
+```bash
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2021 NVIDIA Corporation
+Built on Wed_Jun__2_19:15:15_PDT_2021
+Cuda compilation tools, release 11.4, V11.4.48
+Build cuda_11.4.r11.4/compiler.30033411_0
+```
+
 
 ## Install Docker Image 
 
