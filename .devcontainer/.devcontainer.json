@@ -1,0 +1,21 @@
+{
+    "name": "InnoLab",
+    // Sets the run context to one level up instead of the .devcontainer folder.
+    "build": { "dockerfile": "Dockerfile" },
+    "runArgs": [
+        "--gpus",
+        "all",
+        "--ipc=host",  // provides a way to speed up inter-process communication. 
+        "--ulimit",   // calls the ulimit linux command and set memlock=-1 means no limit for memory lock.
+        "memlock=-1", 
+        "--ulimit", 
+        "stack=67108864", // this sets the stack size and it's specific to my host machine.
+        "--shm-size",  // make it bigger for neural network model 
+        "8gb",
+        "-it",  // input and output stream 
+        "--rm"  // clean cache 
+    ]
+    // if you need to forward ports
+    // "forwardPorts": [3300, 9229],
+
+}
