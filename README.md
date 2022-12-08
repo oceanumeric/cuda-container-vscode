@@ -144,3 +144,52 @@ This makes JAX allocate exactly what is needed on demand, and deallocate memory 
 ## Check your hardware
 
 `lspci -v` 
+
+## After building image
+  
+Now once you have that image, you can use it for different projects.
+  
+Everytime you start a new project from Github, make sure you will have `.devcontainer/devcontainer.json` in your repository.
+  Here is my
+  
+  
+```
+ {
+    "name": "InnoLab",
+    "image": "vsc-cuda-container-92f8d0bcb7ce38ae6a144f94ac61d015",
+    "runArgs": [
+        "--gpus",
+        "all",
+        "--ipc=host",  // provides a way to speed up inter-process communication. 
+        "--ulimit",   // calls the ulimit linux command and set memlock=-1 means no limit for memory lock.
+        "memlock=-1", 
+        "--ulimit", 
+        "stack=67108864", // this sets the stack size and it's specific to my host machine.
+        "--shm-size",  // make it bigger for neural network model 
+        "8gb",
+        "-it",  // input and output stream 
+        "--rm"  // clean cache 
+    ], 
+    "customizations": {
+        "vscode": {
+          "extensions": [
+            "formulahendry.code-runner",
+            "ms-toolsai.jupyter",
+            "ms-toolsai.vscode-jupyter-cell-tags",
+            "ms-python.isort",
+            "ms-python.vscode-pylance",
+            "ms-toolsai.vscode-jupyter-slideshow",
+            "ms-vscode-remote.remote-containers",
+            "ms-vscode-remote.remote-ssh",
+            "ms-vscode-remote.remote-ssh-edit",
+            "ms-vscode-remote.vscode-remote-extensionpack",
+            "ms-vscode.remote-explorer",
+            "ms-vscode-remote.remote-wsl"
+            ]
+        }
+      },
+      "forwardPorts": [6767]
+}
+```
+  
+Then  follow the instruction here  to open: https://code.visualstudio.com/docs/devcontainers/containers#_quick-start-open-a-git-repository-or-github-pr-in-an-isolated-container-volume
