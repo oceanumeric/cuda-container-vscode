@@ -80,6 +80,26 @@ in your Dockerfile.
 
 `docker rmi $(docker images -f "dangling=true" -q)`
 
+## Test GPU
+
+Go to `gpu-test` folder 
+
+- cuda development
+
+`nvcc hello.cu -o hello`
+
+- torch development
+
+`python3 foo_torch.py `
+
+- Jax development
+
+`python3 foo_jax.py`
+
+- Jupyter envionrment
+
+go to jupyter-gpu-test 
+
 
 ## Remark
 
