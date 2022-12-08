@@ -72,6 +72,9 @@ In docker hub, Nvidia/cuda provides many images: https://hub.docker.com/r/nvidia
 
 ## Setup development container in VS Code
 
+Please make sure you will put `requirements.txt` into the same directory
+with your `Dockerfile`. Otherwise you will have change the reference path 
+in your Dockerfile. 
 
 ## Remove Dangling aka <none> Images
 
